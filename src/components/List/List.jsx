@@ -1,16 +1,28 @@
-import Paragraf from "../Paragraf/Paragraf";
-
 const List = (props) => {
   return (
     <ul>
       {props.todos.map((todo) => (
         <li key={todo.id}>
-          <input type="checkbox" />
-          <p style={{textDecoration:'line-throught'}}>
+          <input
+            type="checkbox"
+            checked={todo.completed}
+            onChange={() => props.toggleFn(todo.id)}
+          />
+          <p
+            style={{
+              display: "inline-block",
+              marginLeft: "8px",
+              textDecoration: todo.completed ? "line-through" : "none",
+            }}
+          >
             {todo.todo}
-            {todo.id}
           </p>
-          <button onClick={() => props.deleteFn(todo.id)}>delete</button>
+          <button
+            style={{ marginLeft: "10px" }}
+            onClick={() => props.deleteFn(todo.id)}
+          >
+            delete
+          </button>
         </li>
       ))}
     </ul>
