@@ -1,7 +1,7 @@
 import Paragraf from "../Paragraf/Paragraf";
 
 const List = (props) => {
-  return (gid
+  return (
     <ul>
       {props.todos.map((todo) => (
         <li key={todo.id}>
