@@ -12,7 +12,7 @@ const Form = () => {
     const newTodo = {
       id: todos.length + 1,
       todo: value + "@gmail.com",
-      completed: false,   // ✅ қосу керек
+      completed: false,  
     };
     setTodos([...todos, newTodo]);
     setValue("");
@@ -31,20 +31,20 @@ const Form = () => {
     );
   }
 
-  async function getProducts() {
-    console.log("produktiler aldi");
-  }
+    async function getProducts() {
+      console.log("produktiler aldi");
+    }
 
-  useEffect(() => {
-    getProducts();
-  }, [todos]);
+    useEffect(() => {
+      getProducts();
+    }, [todos]);
 
   return (
     <div className="form">
       <h1 className="h1">Gmail Poshta</h1>
       <Input
         setValue={setValue}
-        value={value}
+         value={value}
         tayp="text"
         lable="todo"
         pl=".....@gmail.com"
